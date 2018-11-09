@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/www"
+    "start": "nodemon ./bin/www",
+    "test": "mocha"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
@@ -14,6 +15,10 @@
     "pug": "2.0.0-beta11"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
+    "gulp": "^3.9.1",
+    "mocha": "^5.2.0",
     "nodemon": "^1.18.6"
   }
 }

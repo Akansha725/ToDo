@@ -15,11 +15,11 @@ router.post("/addTask", function(req, res) {
       console.log(err);
     } else {
       let obj = JSON.parse(data);
-      obj.tasks.push(req.body); 
-      updateFile(JSON.stringify(obj, null, 4)); 
-      res.redirect(req.get('referer'));
+      obj.tasks.push(req.body);
+      updateFile(JSON.stringify(obj, null, 4));
+      res.redirect('/');
     }
-  }); 
+  });
 });
 
 router.put("/updateTask", function(req, res) {
@@ -36,12 +36,12 @@ router.put("/updateTask", function(req, res) {
           }else {
             obj.tasks[index].status = "Complete";
           }
-        }    
+        }
       });
       updateFile(JSON.stringify(obj, null, 4));
-      res.redirect(req.get('referer'));
+      res.redirect('/');
     }
-  }); 
+  });
 });
 
 router.delete("/deleteTask/:id", function(req, res) {
@@ -55,12 +55,12 @@ router.delete("/deleteTask/:id", function(req, res) {
       (obj.tasks).forEach(function(result, index) {
         if(index === (id - 1)) {
           (obj.tasks).splice(index, 1);
-        }    
+        }
       });
       updateFile(JSON.stringify(obj, null, 4));
-      res.redirect(req.get('referer'));
+      res.redirect('/');
     }
-  }); 
+  });
 });
 
 function updateFile(newData){
@@ -68,7 +68,7 @@ function updateFile(newData){
           if(err){
             console.log(err);
           }
-  }); 
+  });
 }
 
 module.exports = router;

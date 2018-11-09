@@ -20,7 +20,7 @@ for (i = 0; i < close.length; i++) {
                 'Content-Type': 'application/json'
             }
         }).then(function (res) {
-            // document.location.reload(true);
+            alert("Task Deleted. Kindly refresh page to see changes");
         });
     }
 }
@@ -40,7 +40,7 @@ list.addEventListener('click', function (ev) {
                 'Content-Type': 'application/json'
             }
         }).then(function (res) {
-            document.location.reload(true);
+            alert("Task Updated. Kindly refresh page to see changes");
         });
     }
 }, false);
@@ -66,8 +66,8 @@ function newElement() {
                 'Content-Type': 'application/json'
             }
         }).then(function (res) {
-            document.location.reload(true);
+            alert("Task added. Kindly refresh page to see changes");
         });
-       
+
     }
 }
