@@ -1,20 +1,12 @@
 {
-  "tasks":[
-    {
-      "name": "Hit the gym",
-      "status": "In-Progress"
-    },
-    {
-      "name": "Buy eggs",
-      "status": "In-Progress"
-    },
-    {
-      "name": "Read a book",
-      "status": "In-Progress"
-    },
-    {
-      "name": "Pay bills",
-      "status": "Complete"
-    }
-  ]
+    "tasks": [
+        {
+            "name": "Drink Water",
+            "status": "In-Progress"
+        },
+        {
+            "name": "Test App",
+            "status": "In-Progress"
+        }
+    ]
 }
