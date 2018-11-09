@@ -4,11 +4,11 @@ var router = express.Router();
 var list = require('./lists/todoList.json');
 var filePath = __dirname + '/lists/todoList.json';
 
-router.get('/', function(req, res, next) {
+router.get('/api/todos', function(req, res, next) {
   res.render('index', {list:  list.tasks});
 });
 
-router.post("/addTask", function(req, res) {
+router.post("/api/todos", function(req, res) {
 
 	fs.readFile(filePath, 'utf8', function readFileCallback(err, data) {
     if (err) {
@@ -22,7 +22,7 @@ router.post("/addTask", function(req, res) {
   });
 });
 
-router.put("/updateTask", function(req, res) {
+router.put("/api/todos", function(req, res) {
 	fs.readFile(filePath, 'utf8', function readFileCallback(err, data) {
     if (err) {
       console.log(err);
@@ -44,7 +44,7 @@ router.put("/updateTask", function(req, res) {
   });
 });
 
-router.delete("/deleteTask/:id", function(req, res) {
+router.delete("/api/todos/:id", function(req, res) {
   let id =  (req.params.id).toString();
 
 	fs.readFile(filePath, 'utf8', function readFileCallback(err, data) {

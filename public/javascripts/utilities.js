@@ -14,7 +14,7 @@ var close = document.getElementsByClassName("close");
 var i;
 for (i = 0; i < close.length; i++) {
     close[i].onclick = function () {
-        fetch('http://localhost:3000/deleteTask/'+i, {
+        fetch('http://localhost:3000/api/todos/'+i, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
@@ -33,7 +33,7 @@ list.addEventListener('click', function (ev) {
         var options = {
             name: (val.slice(0, val.length-1)).toString()
         };
-        fetch('http://localhost:3000/updateTask', {
+        fetch('http://localhost:3000/api/todos', {
             method: 'PUT',
             body: JSON.stringify(options),
             headers: {
@@ -59,7 +59,7 @@ function newElement() {
             status: "In-Progress"
         };
 
-        fetch('http://localhost:3000/addTask', {
+        fetch('http://localhost:3000/api/todos', {
             method: 'POST',
             body: JSON.stringify(options),
             headers: {
